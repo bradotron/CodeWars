@@ -1,0 +1,19 @@
+{
+  "configurations": [
+    {
+      "type": "aws-sam",
+      "request": "direct-invoke",
+      "name": "20200916:DescendingOrder.Tests::DescendingOrder.Tests.Tests::Setup (dotnetcore3.1)",
+      "invokeTarget": {
+        "target": "code",
+        "projectRoot": "20200916/DescendingOrder.Tests",
+        "lambdaHandler": "DescendingOrder.Tests::DescendingOrder.Tests.Tests::Setup"
+      },
+      "lambda": {
+        "runtime": "dotnetcore3.1",
+        "payload": {},
+        "environmentVariables": {}
+      }
+    }
+  ]
+}
