@@ -1,12 +1,8 @@
 #!/bin/bash
-echo 'Start New Challenge'
-while getopts f:c: flag
-do
-  case "${flag}" in
-    f) folder=${OPTARG};;
-    c) class=${OPTARG};;
-  esac
-done
+echo "Enter new folder name:"
+read folder;
+echo "Enter class name:"
+read class;
 
 echo "Folder: $folder";
 echo "Class: $class";
