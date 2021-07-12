@@ -10,34 +10,293 @@ namespace TrainSimulator
     static void Main(string[] args)
     {
       StringBuilder Track = new StringBuilder();
-      Track.AppendLine(@"                                /------------\             ");
-      Track.AppendLine(@"/-------------\                /             |             ");
-      Track.AppendLine(@"|             |               /              S             ");
-      Track.AppendLine(@"|             |              /               |             ");
-      Track.AppendLine(@"|        /----+--------------+------\        |             ");
-      Track.AppendLine(@"\       /     |              |      |        |             ");
-      Track.AppendLine(@" \      |     \              |      |        |             ");
-      Track.AppendLine(@" |      |      \-------------+------+--------+---\         ");
-      Track.AppendLine(@" |      |                    |      |        |   |         ");
-      Track.AppendLine(@" \------+--------------------+------/        /   |         ");
-      Track.AppendLine(@"        |                    |              /    |         ");
-      Track.AppendLine(@"        \------S-------------+-------------/     |         ");
-      Track.AppendLine(@"                             |                   |         ");
-      Track.AppendLine(@"/-------------\              |                   |         ");
-      Track.AppendLine(@"|             |              |             /-----+----\    ");
-      Track.AppendLine(@"|             |              |             |     |     \   ");
-      Track.AppendLine(@"\-------------+--------------+-----S-------+-----/      \  ");
-      Track.AppendLine(@"              |              |             |             \ ");
-      Track.AppendLine(@"              |              |             |             | ");
-      Track.AppendLine(@"              |              \-------------+-------------/ ");
-      Track.AppendLine(@"              |                            |               ");
-      Track.AppendLine(@"              \----------------------------/ ");
+      int result = 0;
+      Console.Clear();
 
-      int result = Dinglemouse.TrainCrash(Track.ToString(), "Aaaa", 147, "Bbbbbbbbbbb", 288, 1000);
+      // Console.WriteLine("Example");
+
+      // Track.AppendLine(@"                                /------------\             ");
+      // Track.AppendLine(@"/-------------\                /             |             ");
+      // Track.AppendLine(@"|             |               /              S             ");
+      // Track.AppendLine(@"|             |              /               |             ");
+      // Track.AppendLine(@"|        /----+--------------+------\        |             ");
+      // Track.AppendLine(@"\       /     |              |      |        |             ");
+      // Track.AppendLine(@" \      |     \              |      |        |             ");
+      // Track.AppendLine(@" |      |      \-------------+------+--------+---\         ");
+      // Track.AppendLine(@" |      |                    |      |        |   |         ");
+      // Track.AppendLine(@" \------+--------------------+------/        /   |         ");
+      // Track.AppendLine(@"        |                    |              /    |         ");
+      // Track.AppendLine(@"        \------S-------------+-------------/     |         ");
+      // Track.AppendLine(@"                             |                   |         ");
+      // Track.AppendLine(@"/-------------\              |                   |         ");
+      // Track.AppendLine(@"|             |              |             /-----+----\    ");
+      // Track.AppendLine(@"|             |              |             |     |     \   ");
+      // Track.AppendLine(@"\-------------+--------------+-----S-------+-----/      \  ");
+      // Track.AppendLine(@"              |              |             |             \ ");
+      // Track.AppendLine(@"              |              |             |             | ");
+      // Track.AppendLine(@"              |              \-------------+-------------/ ");
+      // Track.AppendLine(@"              |                            |               ");
+      // Track.AppendLine(@"              \----------------------------/ ");
+
+      // result = Dinglemouse.TrainCrash(Track.ToString(), "Aaaa", 147, "Bbbbbbbbbbb", 288, 1000);
+      // Console.WriteLine("Result: " + result.ToString());
+      // Console.ReadKey();
+      // Console.Clear();
+
+      // Console.WriteLine("CrashBeforeStarted");
+
+      // Track.Clear();
+      // Track.AppendLine(@"/-----------------\");
+      // Track.AppendLine(@"|                 |");
+      // Track.AppendLine(@"|                 |");
+      // Track.AppendLine(@"|                 |");
+      // Track.AppendLine(@"|                 |");
+      // Track.Append(    @"\-----------------/");
+
+      // result = Dinglemouse.TrainCrash(Track.ToString(), "oO", 10, "oO", 10, 100);
+      // Console.WriteLine("Result: " + result.ToString());
+      // Console.ReadKey();
+      // Console.Clear();
+
+      // Console.WriteLine("CrashCabooser");
+
+      // Track.Clear();
+      // Track.AppendLine(@"/-----------------\");
+      // Track.AppendLine(@"|                 |");
+      // Track.AppendLine(@"|                 |");
+      // Track.AppendLine(@"|                 |");
+      // Track.AppendLine(@"|                 |");
+      // Track.Append(    @"\---------S-------/");
+
+      // result = Dinglemouse.TrainCrash(Track.ToString(), "aA", 10, "bbbbbB", 30, 200);
+      // Console.WriteLine("Result: " + result.ToString());
+      // Console.ReadKey();
+      // Console.Clear();
+
+      // Console.WriteLine("CrashChickenRun");
+
+      // Track.Clear();
+      // Track.AppendLine(@"/-----------------\");
+      // Track.AppendLine(@"|                 |");
+      // Track.AppendLine(@"|                 |");
+      // Track.AppendLine(@"|                 |");
+      // Track.AppendLine(@"|                 |");
+      // Track.Append(    @"\-----------------/");
+
+      // result = Dinglemouse.TrainCrash(Track.ToString(), "aaaA", 10, "Bbbb", 40, 100);
+      // Console.WriteLine("Result: " + result.ToString());
+      // Console.ReadKey();
+      // Console.Clear();
+
+      // Console.WriteLine("CrashKamikaze");
+
+      // Track.Clear();
+      // Track.AppendLine(@"/-----------------\");
+      // Track.AppendLine(@"|                 |");
+      // Track.AppendLine(@"|                 |");
+      // Track.AppendLine(@"|                 |");
+      // Track.AppendLine(@"|                 |");
+      // Track.Append(    @"\---------S-------/");
+
+      // result = Dinglemouse.TrainCrash(Track.ToString(), "xX", 10, "Zzzzzzzzzzzzzz", 40, 100);
+      // Console.WriteLine("Result: " + result.ToString());
+      // Console.ReadKey();
+      // Console.Clear();
+
+      // Console.WriteLine("CrashMisc");
+
+      // Track.Clear();
+      // Track.AppendLine(@"/----\     /----\");
+      // Track.AppendLine(@"|     \   /     |");
+      // Track.AppendLine(@"|      \ /      |");
+      // Track.AppendLine(@"|       S       |");
+      // Track.AppendLine(@"|      / \      |");
+      // Track.AppendLine(@"|     /   \     |");
+      // Track.Append(@"\----/     \----/");
+
+      // result = Dinglemouse.TrainCrash(Track.ToString(), "Eeeeeeee", 32, "Xxxx", 23, 100);
+      // Console.WriteLine("Result: " + result.ToString());
+      // Console.ReadKey();
+      // Console.Clear();
+
+      // Console.WriteLine("CrashSelfDestruct");
+
+      // Track.Clear();
+      // Track.AppendLine(@"/-------\");
+      // Track.AppendLine(@"|       | ");
+      // Track.AppendLine(@"|       | ");
+      // Track.AppendLine(@"\-------+-------------------------------------------------------------------\");
+      // Track.AppendLine(@"        |                                                                   |");
+      // Track.AppendLine(@"        |                                                                   |");
+      // Track.AppendLine(@"        \-------------------------------------------------------------------/");
+
+      // result = Dinglemouse.TrainCrash(Track.ToString(), "aA", 10, "oooooooooooooooooooooooooO", 70, 200);
+      // Console.WriteLine("Result: " + result.ToString());
+      // Console.ReadKey();
+      // Console.Clear();
+
+      // Console.WriteLine("CrashTBone");
+
+      // Track.Clear();
+      // Track.AppendLine(@"/-------\");
+      // Track.AppendLine(@"|       | ");
+      // Track.AppendLine(@"|       | ");
+      // Track.AppendLine(@"\-------+--------\");
+      // Track.AppendLine(@"        |        |");
+      // Track.AppendLine(@"        |        |");
+      // Track.AppendLine(@"        \--------/");
+
+      // result = Dinglemouse.TrainCrash(Track.ToString(), "aaaA", 0, "bbbbbbbbbbbbbB", 30, 100);
+      // Console.WriteLine("Result: " + result.ToString());
+      // Console.ReadKey();
+      // Console.Clear();
+
+      // Console.WriteLine("Letters");
+
+      // Track.Clear();
+      // Track.AppendLine(@"/-----------------\");
+      // Track.AppendLine(@"|                 |");
+      // Track.AppendLine(@"|                 |");
+      // Track.AppendLine(@"|                 |");
+      // Track.AppendLine(@"|                 |");
+      // Track.Append(    @"\---------S-------/");
+
+      // result = Dinglemouse.TrainCrash(Track.ToString(), "zZ", 10, "zzzzzZ", 30, 200);
+      // Console.WriteLine("Result: " + result.ToString());
+      // Console.ReadKey();
+      // Console.Clear();
+
+      // Console.WriteLine("Limits");
+
+      // Track.Clear();
+      // Track.AppendLine(@"/-------\");
+      // Track.AppendLine(@"|       | ");
+      // Track.AppendLine(@"|       | ");
+      // Track.AppendLine(@"\-------+--------\");
+      // Track.AppendLine(@"        |        |");
+      // Track.AppendLine(@"        |        |");
+      // Track.AppendLine(@"        \--------/");
+
+      // result = Dinglemouse.TrainCrash(Track.ToString(), "aaaA", 22, "bbbbB", 0, 0);
+      // Console.WriteLine("Result: " + result.ToString());
+      // Console.ReadKey();
+      // Console.Clear();
+
+      // Console.WriteLine("NoCrash0Tricky");
+
+      // Track.Clear();
+      // Track.AppendLine(@"/-----\   /-----\   /-----\   /-----\ ");
+      // Track.AppendLine(@"|      \ /       \ /       \ /      | ");
+      // Track.AppendLine(@"|       X         X         X       | ");
+      // Track.AppendLine(@"|      / \       / \       / \      | ");
+      // Track.AppendLine(@"\-----/   \-----/   \-----/   \-----/ ");
+
+
+      // result = Dinglemouse.TrainCrash(Track.ToString(), "aaaA", 15, "bbbB", 5, 100);
+      // Console.WriteLine("Result: " + result.ToString());
+      // Console.ReadKey();
+      // Console.Clear();
+
+      // Console.WriteLine("NoCrash1");
+
+      // Track.Clear();
+      // Track.AppendLine(@"/-----------------\");
+      // Track.AppendLine(@"|                 |");
+      // Track.AppendLine(@"|                 |");
+      // Track.AppendLine(@"|                 |");
+      // Track.AppendLine(@"|                 |");
+      // Track.Append(    @"\---------S-------/");
+
+      // result = Dinglemouse.TrainCrash(Track.ToString(), "aaaaaA", 10, "bbbbbB", 30, 100);
+      // Console.WriteLine("Result: " + result.ToString());
+      // Console.ReadKey();
+      // Console.Clear();
+
+      // Console.WriteLine("NoCrashCentralStation");
+
+      // Track.Clear();
+      // Track.AppendLine(@"/-------\");
+      // Track.AppendLine(@"|       | ");
+      // Track.AppendLine(@"|       | ");
+      // Track.AppendLine(@"\-------S--------\");
+      // Track.AppendLine(@"        |        |");
+      // Track.AppendLine(@"        |        |");
+      // Track.AppendLine(@"        \--------/");
+
+      // result = Dinglemouse.TrainCrash(Track.ToString(), "aaaaaA", 10, "bbbbbB", 20, 100);
+      // Console.WriteLine("Result: " + result.ToString());
+      // Console.ReadKey();
+      // Console.Clear();
+
+      // Console.WriteLine("CrashMisc");
+
+      // Track.Clear();
+      // Track.AppendLine(@"/---\");
+      // Track.AppendLine(@"|   | ");
+      // Track.AppendLine(@"\--\| ");
+      // Track.AppendLine(@"   || ");
+      // Track.AppendLine(@"   |\------\ ");
+      // Track.AppendLine(@"   |/----\ | ");
+      // Track.AppendLine(@"   ||    | | ");
+      // Track.AppendLine(@"/--/|    | | ");
+      // Track.AppendLine(@"|   |    | | ");
+      // Track.AppendLine(@"\---/    \-/");
+
+      // result = Dinglemouse.TrainCrash(Track.ToString(), "aaaaaA", 10, "bbbbbB", 20, 100);
+      // Console.WriteLine("Result: " + result.ToString());
+      // Console.ReadKey();
+      // Console.Clear();
+
+      Console.WriteLine("CrashMisc");
+
+      Track.Clear();
+      Track.AppendLine(@"    /---------------------\               /-\ /-\  ");
+      Track.AppendLine(@"   //---------------------\\              | | | |  ");
+      Track.AppendLine(@"  //  /-------------------\\\             | / | /  ");
+      Track.AppendLine(@"  ||  |/------------------\\\\            |/  |/   ");
+      Track.AppendLine(@"  ||  ||                   \\\\           ||  ||   ");
+      Track.AppendLine(@"  \\  ||                   | \\\          ||  ||   ");
+      Track.AppendLine(@"   \\-//                   | || \---------/\--/|   ");
+      Track.AppendLine(@"/-\ \-/                    \-/|                |   ");
+      Track.AppendLine(@"|  \--------------------------/                |   ");
+      Track.AppendLine(@"\----------------------------------------------/   ");
+
+      result = Dinglemouse.TrainCrash(Track.ToString(), "aaaaaA", 10, "bbbbbB", 20, 100);
       Console.WriteLine("Result: " + result.ToString());
       Console.ReadKey();
-    }
+      Console.Clear();
 
+      /*
+/---\ 
+|   |  
+\--\| 
+   ||  
+   |\------\  
+   |/----\ |   
+   ||    | |    
+/--/|    | |    
+|   |    | |    
+\---/    \-/
+Eee|33
+aaA|2
+100
+
+    /---------------------\               /-\ /-\  
+   //---------------------\\              | | | |  
+  //  /Xxxxxxxxxxxxxxxxxxx\\\             | / | /  
+  ||  |/------------------\\\\            |/  |/   
+  ||  ||                   \\\\           ||  ||   
+  \\  ||                   | \\\          ||  ||   
+   \\-//                   | || \---------/\--/|   
+/-\ \-/                    \-/|                |   
+|  \--------------------------/                |   
+\-xxxxxxxxxX-----------------------------------/   
+
+Xxxxxxxxxxxxxxxxxxx|192
+Xxxxxxxxxx|108
+
+      */
+    }
 
     // =======================================
     // Blaine is a pain, and that is the truth
@@ -45,6 +304,11 @@ namespace TrainSimulator
 
     public static int TrainCrash(string track, string aTrain, int aTrainPos, string bTrain, int bTrainPos, int limit)
     {
+      Console.WriteLine(track);
+      Console.WriteLine(aTrain + "|" + aTrainPos.ToString());
+      Console.WriteLine(bTrain + "|" + bTrainPos.ToString());
+      Console.WriteLine(limit.ToString());
+
       Track TrainTrack = new Track(track);
 
       TrainTrack.AddTrain(new Track.Train(aTrain, aTrainPos, TrainTrack.Length));
@@ -62,7 +326,7 @@ namespace TrainSimulator
 
       int time = 0;
 
-      while (!TrainTrack.IsCollision)
+      while (!TrainTrack.IsCollision && time < limit)
       {
         TrainTrack.IncrementTime();
 
@@ -71,6 +335,11 @@ namespace TrainSimulator
         // System.Threading.Thread.Sleep(20);
 
         time++;
+
+        if (time > 2000)
+        {
+          throw new Exception("Wat");
+        }
       }
 
       return TrainTrack.IsCollision ? time : -1;
@@ -111,7 +380,13 @@ namespace TrainSimulator
             {
               foreach (int position in train.TrackPositions)
               {
-                TrackPiece intersection = Intersections.FirstOrDefault(intersection => intersection.Position == position);
+                if (TrainPositions.Contains(position))
+                {
+                  return true;
+                }
+
+                TrackPiece intersection = Intersections.FirstOrDefault(i => i.Position == position);
+
                 if (intersection != null)
                 {
                   TrainPositions
@@ -170,11 +445,23 @@ namespace TrainSimulator
 
       public Track(string track)
       {
-        string[] InitialSplit = track.Split(System.Environment.NewLine);
-        OriginalStringArray = InitialSplit.Take(InitialSplit.Length - 1).ToArray();
+        OriginalStringArray = track.Split(System.Environment.NewLine);
+
+        if (OriginalStringArray[OriginalStringArray.Length - 1].Length <= 1)
+        {
+          OriginalStringArray = OriginalStringArray.SkipLast(1).ToArray();
+        }
 
         XDimension = OriginalStringArray.Select(s => s.Length).Max();
         YDimension = OriginalStringArray.Length;
+
+        for (int i = 0; i < OriginalStringArray.Length; i++)
+        {
+          if (OriginalStringArray[i].Length < XDimension)
+          {
+            OriginalStringArray[i] = OriginalStringArray[i].PadRight(XDimension);
+          }
+        }
 
         this.track = ProcessTrackArraysIntoInlineTrackString(OriginalStringArray);
 
@@ -202,9 +489,9 @@ namespace TrainSimulator
         int xDot = Current == '|' ? 0 : 1;
         int yDot = Current == '-' || Current == 'S' || Current == '/' ? 0 : 1;
 
-        // Console.Clear();
-        // RenderTrackDuringConstructor(StartXPos, StartYPos, xDot, yDot, tracks);
-        // System.Threading.Thread.Sleep(10);
+        Console.Clear();
+        RenderTrackDuringConstructor(StartXPos, StartYPos, xDot, yDot, tracks);
+        System.Threading.Thread.Sleep(10);
 
         int xPos = StartXPos + xDot;
         int yPos = StartYPos + yDot;
@@ -215,9 +502,10 @@ namespace TrainSimulator
 
         while (!done)
         {
-          // Console.Clear();
-          // RenderTrackDuringConstructor(xPos, yPos, xDot, yDot, tracks);
-          // System.Threading.Thread.Sleep(10);
+          Console.Clear();
+          RenderTrackDuringConstructor(xPos, yPos, xDot, yDot, tracks);
+          System.Threading.Thread.Sleep(10);
+          //Console.ReadKey();
 
           Previous = Current;
           Current = tracks[yPos][xPos];
@@ -243,37 +531,56 @@ namespace TrainSimulator
               break;
 
             case '/':
-              // this could also be a curve though
               if (Previous == '-')
               {
                 yDot = -xDot;
-                xDot = 0;
+                if (xDot < 0)
+                {
+                  xDot = tracks[yPos + 1][xPos] != ' ' ? 0 : -1;
+                }
+                else
+                {
+                  xDot = tracks[yPos - 1][xPos] != ' ' ? 0 : 1;
+                }
               }
               else if (Previous == '|' || Previous == '/' || Previous == '+')
               {
                 if (yDot > 0)
                 {
-                  if (tracks[yPos][xPos - 1] != ' ')
+                  if (tracks[yPos][xPos - 1] == '-')
                   {
                     xDot = -1;
                     yDot = 0;
                   }
-                  if (tracks[yPos + 1][xPos - 1] != ' ')
+                  else if (yPos + 1 < tracks.Length)
                   {
-                    xDot = -1;
-                    yDot = 1;
+                    if (tracks[yPos + 1][xPos - 1] == '/' || tracks[yPos + 1][xPos - 1] == 'X')
+                    {
+                      xDot = -1;
+                      yDot = 1;
+                    }
+                    if (tracks[yPos + 1][xPos] == '|')
+                    {
+                      xDot = 0;
+                      yDot = 1;
+                    }
                   }
                 }
                 else
                 {
-                  if (tracks[yPos][xPos + 1] != ' ')
+                  if (tracks[yPos][xPos + 1] == '-')
                   {
                     xDot = 1;
                     yDot = 0;
                   }
-                  if (tracks[yPos - 1][xPos + 1] != ' ')
+                  else if (yPos - 1 >= 0 && tracks[yPos - 1][xPos + 1] == '/' || tracks[yPos - 1][xPos + 1] == 'X')
                   {
                     xDot = 1;
+                    yDot = -1;
+                  }
+                  else if (yPos - 1 >= 0 && tracks[yPos - 1][xPos] == '|')
+                  {
+                    xDot = 0;
                     yDot = -1;
                   }
                 }
@@ -288,21 +595,15 @@ namespace TrainSimulator
               {
                 if (xDot > 0)
                 {
-                  // check right and rightdown
                   if (xPos + 1 < tracks[yPos].Length)
                   {
-                    if (tracks[yPos][xPos + 1] != ' ')
-                    {
-                      xDot = 1;
-                      yDot = 0;
-                    }
-                    if (tracks[yPos + 1][xPos + 1] != ' ')
+                    if (tracks[yPos + 1][xPos + 1] == '\\')
                     {
                       xDot = 1;
                       yDot = 1;
                     }
                   }
-                  if (tracks[yPos + 1][xPos] != ' ')
+                  if (tracks[yPos + 1][xPos] == '|')
                   {
                     xDot = 0;
                     yDot = 1;
@@ -312,18 +613,13 @@ namespace TrainSimulator
                 {
                   if (xPos - 1 > 0)
                   {
-                    if (tracks[yPos][xPos - 1] != ' ')
-                    {
-                      xDot = -1;
-                      yDot = 0;
-                    }
-                    if (tracks[yPos - 1][xPos - 1] != ' ')
+                    if (tracks[yPos - 1][xPos - 1] == '\\')
                     {
                       xDot = -1;
                       yDot = -1;
                     }
                   }
-                  if (tracks[yPos - 1][xPos] != ' ')
+                  if (tracks[yPos - 1][xPos] == '|')
                   {
                     xDot = 0;
                     yDot = -1;
@@ -334,34 +630,47 @@ namespace TrainSimulator
               {
                 if (yDot < 0)
                 {
-                  if (tracks[yPos - 1][xPos] != ' ')
+                  if (yPos - 1 >= 0)
                   {
-                    xDot = 0;
-                    yDot = -1;
+                    if (tracks[yPos - 1][xPos] == '|')
+                    {
+                      xDot = 0;
+                      yDot = -1;
+                    }
+                    else if (xPos - 1 >= 0 && tracks[yPos - 1][xPos - 1] == '\\' || tracks[yPos - 1][xPos - 1] == 'X')
+                    {
+                      xDot = -1;
+                      yDot = -1;
+                    }
+                    else
+                    {
+                      xDot = -1;
+                      yDot = 0;
+                    }
                   }
-                  if (xPos - 1 >= 0 && tracks[yPos - 1][xPos - 1] != ' ')
+                  else
                   {
+                    yDot = 0;
                     xDot = -1;
-                    yDot = -1;
                   }
                 }
                 else
                 {
                   if (yPos + 1 < tracks.Length)
                   {
-                    if (tracks[yPos + 1][xPos] != ' ')
+                    if (tracks[yPos + 1][xPos] == '|')
                     {
                       yDot = 1;
                       xDot = 0;
                     }
-                    if (tracks[yPos + 1][xPos + 1] != ' ')
+                    if (tracks[yPos + 1][xPos + 1] == '\\' || tracks[yPos - 1][xPos - 1] == 'X')
                     {
                       yDot = 1;
                       xDot = 1;
                     }
                   }
 
-                  if (tracks[yPos][xPos + 1] != ' ')
+                  if (tracks[yPos][xPos + 1] == '-')
                   {
                     yDot = 0;
                     xDot = 1;
@@ -514,5 +823,6 @@ namespace TrainSimulator
         }
       }
     }
+
   }
 }
