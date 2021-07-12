@@ -182,20 +182,20 @@ namespace TrainSimulator
       // Console.ReadKey();
       // Console.Clear();
 
-      // Console.WriteLine("NoCrash0Tricky");
+      Console.WriteLine("NoCrash0Tricky");
 
-      // Track.Clear();
-      // Track.AppendLine(@"/-----\   /-----\   /-----\   /-----\ ");
-      // Track.AppendLine(@"|      \ /       \ /       \ /      | ");
-      // Track.AppendLine(@"|       X         X         X       | ");
-      // Track.AppendLine(@"|      / \       / \       / \      | ");
-      // Track.AppendLine(@"\-----/   \-----/   \-----/   \-----/ ");
+      Track.Clear();
+      Track.AppendLine(@"/-----\   /-----\   /-----\   /-----\ ");
+      Track.AppendLine(@"|      \ /       \ /       \ /      | ");
+      Track.AppendLine(@"|       X         X         X       | ");
+      Track.AppendLine(@"|      / \       / \       / \      | ");
+      Track.AppendLine(@"\-----/   \-----/   \-----/   \-----/ ");
 
 
-      // result = Dinglemouse.TrainCrash(Track.ToString(), "aaaA", 15, "bbbB", 5, 100);
-      // Console.WriteLine("Result: " + result.ToString());
-      // Console.ReadKey();
-      // Console.Clear();
+      result = Dinglemouse.TrainCrash(Track.ToString(), "aaaA", 15, "bbbB", 5, 100);
+      Console.WriteLine("Result: " + result.ToString());
+      Console.ReadKey();
+      Console.Clear();
 
       // Console.WriteLine("NoCrash1");
 
@@ -212,21 +212,21 @@ namespace TrainSimulator
       // Console.ReadKey();
       // Console.Clear();
 
-      // Console.WriteLine("NoCrashCentralStation");
+      Console.WriteLine("NoCrashCentralStation");
 
-      // Track.Clear();
-      // Track.AppendLine(@"/-------\");
-      // Track.AppendLine(@"|       | ");
-      // Track.AppendLine(@"|       | ");
-      // Track.AppendLine(@"\-------S--------\");
-      // Track.AppendLine(@"        |        |");
-      // Track.AppendLine(@"        |        |");
-      // Track.AppendLine(@"        \--------/");
+      Track.Clear();
+      Track.AppendLine(@"/-------\");
+      Track.AppendLine(@"|       | ");
+      Track.AppendLine(@"|       | ");
+      Track.AppendLine(@"\-------S--------\");
+      Track.AppendLine(@"        |        |");
+      Track.AppendLine(@"        |        |");
+      Track.AppendLine(@"        \--------/");
 
-      // result = Dinglemouse.TrainCrash(Track.ToString(), "aaaaaA", 10, "bbbbbB", 20, 100);
-      // Console.WriteLine("Result: " + result.ToString());
-      // Console.ReadKey();
-      // Console.Clear();
+      result = Dinglemouse.TrainCrash(Track.ToString(), "aaaaaA", 10, "bbbbbB", 20, 100);
+      Console.WriteLine("Result: " + result.ToString());
+      Console.ReadKey();
+      Console.Clear();
 
       // Console.WriteLine("CrashMisc");
 
@@ -304,11 +304,6 @@ Xxxxxxxxxx|108
 
     public static int TrainCrash(string track, string aTrain, int aTrainPos, string bTrain, int bTrainPos, int limit)
     {
-      Console.WriteLine(track);
-      Console.WriteLine(aTrain + "|" + aTrainPos.ToString());
-      Console.WriteLine(bTrain + "|" + bTrainPos.ToString());
-      Console.WriteLine(limit.ToString());
-
       Track TrainTrack = new Track(track);
 
       TrainTrack.AddTrain(new Track.Train(aTrain, aTrainPos, TrainTrack.Length));
@@ -319,27 +314,13 @@ Xxxxxxxxxx|108
         return 0;
       }
 
-      // TrainTrack.RenderTrack();
-
-      // Console.WriteLine("Press any key to continue...");
-      // Console.ReadKey();
-
       int time = 0;
 
       while (!TrainTrack.IsCollision && time < limit)
       {
         TrainTrack.IncrementTime();
 
-        // Console.Clear();
-        // TrainTrack.RenderTrack();
-        // System.Threading.Thread.Sleep(20);
-
         time++;
-
-        if (time > 2000)
-        {
-          throw new Exception("Wat");
-        }
       }
 
       return TrainTrack.IsCollision ? time : -1;
@@ -347,9 +328,6 @@ Xxxxxxxxxx|108
 
     public class Track
     {
-      private int XDimension;
-      private int YDimension;
-
       private string[] OriginalStringArray;
       private string track;
       private List<TrackPiece> TrackPieces;
@@ -452,18 +430,18 @@ Xxxxxxxxxx|108
           OriginalStringArray = OriginalStringArray.SkipLast(1).ToArray();
         }
 
-        XDimension = OriginalStringArray.Select(s => s.Length).Max();
-        YDimension = OriginalStringArray.Length;
+        int xDimension = OriginalStringArray.Select(s => s.Length).Max();
+        int yDimension = OriginalStringArray.Length;
 
         for (int i = 0; i < OriginalStringArray.Length; i++)
         {
-          if (OriginalStringArray[i].Length < XDimension)
+          if (OriginalStringArray[i].Length < xDimension)
           {
-            OriginalStringArray[i] = OriginalStringArray[i].PadRight(XDimension);
+            OriginalStringArray[i] = OriginalStringArray[i].PadRight(xDimension);
           }
         }
 
-        this.track = ProcessTrackArraysIntoInlineTrackString(OriginalStringArray);
+        GenerateTrackPieces(OriginalStringArray);
 
         Trains = new List<Train>();
       }
@@ -473,17 +451,15 @@ Xxxxxxxxxx|108
         Trains.Add(train);
       }
 
-      private string ProcessTrackArraysIntoInlineTrackString(string[] tracks)
+      private void GenerateTrackPieces(string[] tracks)
       {
         TrackPieces = new List<TrackPiece>();
         Intersections = new List<TrackPiece>();
-        string InlineTrack = "";
         char[] ValidTrackPieces = new char[] { '-', '|', '/', '\\', '+', 'X', 'S' };
         int StartXPos = tracks[0].IndexOfAny(ValidTrackPieces);
         int StartYPos = 0;
 
         char Current = tracks[StartYPos][StartXPos];
-        InlineTrack += Current.ToString();
         TrackPieces.Add(new TrackPiece(Current, 0, StartXPos, StartYPos));
 
         int xDot = Current == '|' ? 0 : 1;
@@ -509,12 +485,11 @@ Xxxxxxxxxx|108
 
           Previous = Current;
           Current = tracks[yPos][xPos];
-          InlineTrack += Current.ToString();
-          TrackPieces.Add(new TrackPiece(Current, InlineTrack.Length - 1, xPos, yPos));
+          TrackPieces.Add(new TrackPiece(Current, TrackPieces.Count - 1, xPos, yPos));
 
           if (Current == '+' || Current == 'X' || Current == 'S')
           {
-            Intersections.Add(new TrackPiece(Current, InlineTrack.Length - 1, xPos, yPos));
+            Intersections.Add(new TrackPiece(Current, TrackPieces.Count - 1, xPos, yPos));
           }
 
           // find the xDot and yDot
@@ -683,13 +658,9 @@ Xxxxxxxxxx|108
               }
               break;
             case '+':
-              // pass through
-              break;
             case 'X':
-              // pass through
-              break;
             case 'S':
-              // pass through
+              // these are only pass throughs
               break;
 
             default:
@@ -704,21 +675,11 @@ Xxxxxxxxxx|108
             done = true;
           }
         }
-
-        return InlineTrack;
-      }
-
-      public string InlineTrack
-      {
-        get
-        {
-          return track;
-        }
       }
 
       public void RenderTrack()
       {
-        string[] strings = new string[YDimension];
+        string[] strings = new string[OriginalStringArray.Length];
         for (int y = 0; y < strings.Length; y++)
         {
           strings[y] = OriginalStringArray[y];
