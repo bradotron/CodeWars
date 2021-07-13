@@ -2,7 +2,11 @@
 
 namespace OddOrEven
 {
-    public class Class1
+  public class SolutionClass
+  {
+    public static string EvenOrOdd(int number)
     {
+      return number % 2 == 0 ? "Even" : "Odd";
     }
+  }
 }
