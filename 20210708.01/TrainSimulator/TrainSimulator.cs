@@ -465,10 +465,6 @@ Xxxxxxxxxx|108
         int xDot = Current == '|' ? 0 : 1;
         int yDot = Current == '-' || Current == 'S' || Current == '/' ? 0 : 1;
 
-        Console.Clear();
-        RenderTrackDuringConstructor(StartXPos, StartYPos, xDot, yDot, tracks);
-        System.Threading.Thread.Sleep(10);
-
         int xPos = StartXPos + xDot;
         int yPos = StartYPos + yDot;
 
@@ -478,10 +474,6 @@ Xxxxxxxxxx|108
 
         while (!done)
         {
-          Console.Clear();
-          RenderTrackDuringConstructor(xPos, yPos, xDot, yDot, tracks);
-          System.Threading.Thread.Sleep(10);
-          //Console.ReadKey();
 
           Previous = Current;
           Current = tracks[yPos][xPos];
@@ -673,51 +665,6 @@ Xxxxxxxxxx|108
           if (xPos == StartXPos && yPos == StartYPos)
           {
             done = true;
-          }
-        }
-      }
-
-      public void RenderTrack()
-      {
-        string[] strings = new string[OriginalStringArray.Length];
-        for (int y = 0; y < strings.Length; y++)
-        {
-          strings[y] = OriginalStringArray[y];
-        }
-
-        foreach (Train train in Trains)
-        {
-          for (int i = 0; i < train.TrackPositions.Count; i++)
-          {
-            int position = train.TrackPositions[i];
-            StringBuilder nextPiece = new StringBuilder(strings[TrackPieces[position].y]);
-            nextPiece[TrackPieces[position].x] = i == 0 ? char.ToUpper(train.Letter) : train.Letter;
-            strings[TrackPieces[position].y] = nextPiece.ToString();
-          }
-        }
-
-        foreach (string s in strings)
-        {
-          Console.WriteLine(s);
-        }
-      }
-
-      public static void RenderTrackDuringConstructor(int x, int y, int xDot, int yDot, string[] Track)
-      {
-        // Console.Clear();
-        Console.WriteLine(String.Format("X: {0} Y: {1} | xDot: {2} yDot: {3} | {4} x {5}", x, y, xDot, yDot, Track[0].Length, Track.Length));
-
-        for (int i = 0; i < Track.Length; i++)
-        {
-          if (i == y)
-          {
-            StringBuilder sb = new StringBuilder(Track[y]);
-            sb[x] = '*';
-            Console.WriteLine(sb.ToString());
-          }
-          else
-          {
-            Console.WriteLine(Track[i]);
           }
         }
       }
