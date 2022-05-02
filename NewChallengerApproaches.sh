@@ -1,33 +1,45 @@
 #!/bin/bash
 echo "Enter new folder name:"
 read folder;
-echo "Enter Class Lib Name:"
-read class;
+echo "Enter Challenge Name:"
+read challenge;
 
 echo "Folder: $folder";
-echo "Class: $class";
+echo "challenge: $challenge";
 
-# make directory
-mkdir $folder;
-# change into project directory
+if [ ! -d "$folder" ]; then
+  mkdir $folder;
+fi
 cd $folder;
-dotnet new sln | cat;
 
-# make class directory
-mkdir $class;
-# move into class
-cd $class;
-dotnet new classlib | cat;
-mv Class1.cs $class.cs
+dotnet new console -o $challenge
+cd $challenge;
 
-cd ..
-dotnet sln add $class/$class.csproj | cat;
+touch $challenge.cs;
+echo "public class Program
+{
+  static void Main(string[] args)
+  {
+    Console.WriteLine("Hello, World!");
+  }
+}
 
-mkdir $class.Tests;
-cd $class.Tests;
+public class Class1
+{
+}
+" > $challenge.cs;
+
+rm Program.cs;
+
+dotnet add package Microsoft.NET.Test.Sdk --no-restore;
+dotnet add package NUnit --no-restore;
+dotnet add package NUnit3TestAdapter --no-restore;
+dotnet add package coverlet.collector --no-restore;
+
+mkdir Tests;
+cd Tests;
+
 dotnet new nunit | cat;
-dotnet add reference ../$class/$class.csproj | cat;
 
-cd ..
-dotnet sln add ./$class.Tests/$class.Tests.csproj;
-
+echo "*******"
+echo "Add <GenerateProgramFile>false</GenerateProgramFile> to the test .csproj"

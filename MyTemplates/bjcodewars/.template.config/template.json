@@ -1,8 +1,0 @@
-{
-  "$schema": "http://json.schemastore.org/template",
-  "author": "Bradley Jensen",
-  "classifications": [ "Console", "Codewars" ],
-  "identity": "BJCodewarsTemplates.ConsoleTemplate.CSharp",
-  "name": "Bradley Jensen Codewars Console Application",
-  "shortName": "bjcodewars"
-}
