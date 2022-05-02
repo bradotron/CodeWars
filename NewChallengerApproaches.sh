@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Enter new folder name:"
 read folder;
-echo "Enter namespace:"
+echo "Enter Class Lib Name:"
 read class;
 
 echo "Folder: $folder";
