@@ -12,34 +12,22 @@ if [ ! -d "$folder" ]; then
 fi
 cd $folder;
 
-dotnet new console -o $challenge
+mkdir $challenge;
 cd $challenge;
+dotnet new sln;
 
-touch $challenge.cs;
-echo "public class Program
-{
-  static void Main(string[] args)
-  {
-    Console.WriteLine("Hello, World!");
-  }
-}
+mkdir Class1;
+cd Class1;
+dotnet new classlib;
+cd ..;
 
-public class Class1
-{
-}
-" > $challenge.cs;
+dotnet sln add Class1/Class1.csproj;
 
-rm Program.cs;
+mkdir Class1.Tests;
+cd Class1.Tests;
 
-dotnet add package Microsoft.NET.Test.Sdk --no-restore;
-dotnet add package NUnit --no-restore;
-dotnet add package NUnit3TestAdapter --no-restore;
-dotnet add package coverlet.collector --no-restore;
+dotnet new nunit;
+dotnet add reference ../Class1/Class1.csproj
 
-mkdir Tests;
-cd Tests;
-
-dotnet new nunit | cat;
-
-echo "*******"
-echo "Add <GenerateProgramFile>false</GenerateProgramFile> to the test .csproj"
+cd ..;
+dotnet sln add ./Class1.Tests/Class1.Tests.csproj
