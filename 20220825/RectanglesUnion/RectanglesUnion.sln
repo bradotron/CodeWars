@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32811.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RectanglesUnion", "RectanglesUnion\RectanglesUnion.csproj", "{FC4BE19E-F196-4AF4-AFC4-B7E738FEFDCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kata", "Kata\Kata.csproj", "{5B55FAF0-2928-4E19-823A-8B2489D09C7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KataTests", "KataTests\KataTests.csproj", "{46287ADA-F2E7-43C3-B2C3-F64ABE8043C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC4BE19E-F196-4AF4-AFC4-B7E738FEFDCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC4BE19E-F196-4AF4-AFC4-B7E738FEFDCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC4BE19E-F196-4AF4-AFC4-B7E738FEFDCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC4BE19E-F196-4AF4-AFC4-B7E738FEFDCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B55FAF0-2928-4E19-823A-8B2489D09C7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B55FAF0-2928-4E19-823A-8B2489D09C7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B55FAF0-2928-4E19-823A-8B2489D09C7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B55FAF0-2928-4E19-823A-8B2489D09C7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46287ADA-F2E7-43C3-B2C3-F64ABE8043C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46287ADA-F2E7-43C3-B2C3-F64ABE8043C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46287ADA-F2E7-43C3-B2C3-F64ABE8043C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46287ADA-F2E7-43C3-B2C3-F64ABE8043C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {714E9621-7939-4706-918E-EBFD8616CF2B}
+	EndGlobalSection
+EndGlobal
