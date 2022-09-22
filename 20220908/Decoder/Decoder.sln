@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32811.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NextBiggerNumber", "Decoder\NextBiggerNumber.csproj", "{04E6671F-6507-44FF-BD98-0B12B53DE66D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NextBiggerNumberTests", "NextBiggerNumberTests\NextBiggerNumberTests.csproj", "{36849EDB-1D11-4BE7-90D2-2266FEFA31FA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{04E6671F-6507-44FF-BD98-0B12B53DE66D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04E6671F-6507-44FF-BD98-0B12B53DE66D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04E6671F-6507-44FF-BD98-0B12B53DE66D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04E6671F-6507-44FF-BD98-0B12B53DE66D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36849EDB-1D11-4BE7-90D2-2266FEFA31FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36849EDB-1D11-4BE7-90D2-2266FEFA31FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36849EDB-1D11-4BE7-90D2-2266FEFA31FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36849EDB-1D11-4BE7-90D2-2266FEFA31FA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5A60461E-CADA-4384-BEF3-66885B3B0321}
+	EndGlobalSection
+EndGlobal
