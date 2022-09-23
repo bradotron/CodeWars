@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32811.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rot13", "Rot13\Rot13.csproj", "{3643AF4C-F9C2-492E-A36A-5449C32A2A11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rot13Tests", "Rot13Tests\Rot13Tests.csproj", "{49603F6D-BADA-4465-BCFB-1F0599CC5940}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3643AF4C-F9C2-492E-A36A-5449C32A2A11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3643AF4C-F9C2-492E-A36A-5449C32A2A11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3643AF4C-F9C2-492E-A36A-5449C32A2A11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3643AF4C-F9C2-492E-A36A-5449C32A2A11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49603F6D-BADA-4465-BCFB-1F0599CC5940}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49603F6D-BADA-4465-BCFB-1F0599CC5940}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49603F6D-BADA-4465-BCFB-1F0599CC5940}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49603F6D-BADA-4465-BCFB-1F0599CC5940}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0DCE53CF-BD00-4EA5-89CE-ACE07C16208A}
+	EndGlobalSection
+EndGlobal
